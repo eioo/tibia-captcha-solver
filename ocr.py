@@ -57,7 +57,7 @@ def crop_captcha(region):
 
 
 def locate_captcha():
-    return pyautogui.locateOnScreen('captcha_corner.png')
+    return pyautogui.locateOnScreen('captcha_corner.png', confidence=0.9)
 
 
 def replace_all(text, replacements):
@@ -105,11 +105,17 @@ def click_select(x, y):
 
 
 def main():
-    captcha_region = locate_captcha()
+    print('Waiting for captcha')
 
-    if not captcha_region:
-        print('Could not find captcha')
-        return
+    while True:
+        captcha_region = locate_captcha()
+
+        if captcha_region:
+            break
+
+        time.sleep(2)
+
+    print('Captcha found')
 
     cropped = crop_captcha(captcha_region)
     filtered = filter_color(cropped['img'])
@@ -121,8 +127,13 @@ def main():
         return
 
     click_choice(cropped['x'], cropped['y'], choice_index)
-    time.sleep(0.5)
+    time.sleep(1)
     click_select(cropped['x'], cropped['y'])
+    time.sleep(1)
+    pyautogui.typewrite('!me')
+    print('Done')
+
+    main()
 
 
 main()
