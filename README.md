@@ -10,7 +10,9 @@
 
 ## Installation
 
-1. Add following directories to your `PATH` environment variable:
+1. Download and extract this project from [this link](https://github.com/eioo/tibia-captcha-solver/archive/master.zip).
+
+2. Add following directories to your `PATH` environment variable:
 
     ```
     C:\Program Files\Tesseract-OCR
@@ -23,6 +25,6 @@
 
     You can confirm that they work by going to command prompt and typing `tesseract -v` and `python --version`
 
-2. Run `setup.bat` (only run once)
+3. Run `setup.bat` (only run once)
 
-3. Run `start.bat` to run the solver
+4. Run `start.bat` to run the solver
