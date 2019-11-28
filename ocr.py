@@ -1,3 +1,4 @@
+import random
 import re
 import time
 
@@ -138,7 +139,7 @@ def main():
 
         time.sleep(2)
 
-    print('Captcha found')
+    print('Captcha found, trying to solve')
 
     cropped = crop_captcha(captcha_region)
     filtered = filter_color(cropped['img'])
@@ -152,7 +153,8 @@ def main():
     click_choice(cropped['x'], cropped['y'], choice_index)
     time.sleep(1)
     click_select(cropped['x'], cropped['y'])
-    print('Done')
+    wait_time = random.randint(30, 45)
+    print(f'Solved captcha. Waiting for {wait_time} seconds before next solve')
 
     main()
 
