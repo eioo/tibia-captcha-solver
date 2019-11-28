@@ -7,9 +7,13 @@ import pyautogui
 from PIL import Image
 from pytesseract import pytesseract
 
+from window_manager import WindowManager
+
 lower_rgb = 150
 upper_rgb = 255
+confidence = 0.75
 debug = True
+w = WindowManager()
 
 
 def filter_color(image):
@@ -39,10 +43,10 @@ def filter_color(image):
 
 
 def crop_captcha(region):
-    x = region.left - 51
-    y = region.top + 60
-    w = 375
-    h = 100
+    x = region.left - 120
+    y = region.top + 85
+    w = 100
+    h = 145
 
     if debug:
         cropped_img = pyautogui.screenshot('cropped.png', region=(x, y, w, h))
@@ -57,7 +61,8 @@ def crop_captcha(region):
 
 
 def locate_captcha():
-    return pyautogui.locateOnScreen('captcha_corner.png', confidence=0.9)
+    global confidence
+    return pyautogui.locateOnScreen('captcha_corner.png', confidence=confidence)
 
 
 def replace_all(text, replacements):
@@ -83,6 +88,8 @@ def solve_captcha(image):
         print(text)
         return False
 
+    print(text)
+    time.sleep(1)
     answer = eval(expr)
     choices = [int(n) for n in re.findall(r'\n+(-?\d+)', text)]
     print(f'{expr} = {answer}')
@@ -94,18 +101,34 @@ def solve_captcha(image):
 
 
 def click_choice(x, y, index):
-    choice_x = x + 10
-    choice_y = y + 25 + index * 14
+    choice_x = x + 15
+    choice_y = y + 14 + index * 21
     print(f'Selecting choice #{index + 1} ({choice_x}, {choice_y})')
     pyautogui.click(choice_x, choice_y)
 
 
 def click_select(x, y):
-    pyautogui.click(x + 286, y + 115)
+    pyautogui.click(x + 429, y + 172)
+
+
+def activate_captcha():
+    global w
+
+    try:
+        w.find_window_wildcard(".*Archlight.*")
+        w.set_foreground()
+    except:
+        print('No archlight window found? Exiting...')
+        exit(0)
+
+    time.sleep(1)
+    pyautogui.typewrite('!me', interval=0.2)
 
 
 def main():
-    print('Waiting for captcha')
+    print('Typing "!me"')
+    activate_captcha()
+    print('Searching for captcha')
 
     while True:
         captcha_region = locate_captcha()
@@ -129,8 +152,6 @@ def main():
     click_choice(cropped['x'], cropped['y'], choice_index)
     time.sleep(1)
     click_select(cropped['x'], cropped['y'])
-    time.sleep(1)
-    pyautogui.typewrite('!me')
     print('Done')
 
     main()

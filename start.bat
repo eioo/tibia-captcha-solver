@@ -1,2 +1,2 @@
 @echo off
-python ocr.py
+python C:\Users\chautin\desktop\tibia-captcha-solver-master\ocr.py

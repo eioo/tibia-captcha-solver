@@ -4,9 +4,11 @@
 
 * **Python 3.6:** [32bit](https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe) / [64bit](https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe)
 
+* **pywin32** module for Python: [32bit](https://github.com/mhammond/pywin32/releases/download/b227/pywin32-227.win32-py3.6.exe) / [64bit](https://github.com/mhammond/pywin32/releases/download/b227/pywin32-227.win-amd64-py3.6.exe)
+
 * **Tesseract OCR:** [32bit](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v5.0.0-alpha.20191030.exe) / [64bit](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.0-alpha.20191030.exe) 
 
-❗️ Install both before proceeding.
+❗️ Install everything above before proceeding.
 
 ## Installation
 
