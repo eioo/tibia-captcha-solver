@@ -23,7 +23,7 @@
 
     [Guide](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) on how to add environment variables.
 
-    You can confirm that they work by going to command prompt and typing `tesseract -v` and `python --version`
+    You can confirm that they work by opening a new command prompt and typing `tesseract -v` and `python --version`
 
 3. Run `setup.bat` (only run once)
 
