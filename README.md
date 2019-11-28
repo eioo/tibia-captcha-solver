@@ -6,7 +6,7 @@
 
 * **Tesseract OCR:** [32bit](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v5.0.0-alpha.20191030.exe) or [64bit](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.0-alpha.20191030.exe) 
 
-❗️Install both before proceeding.
+❗️ Install both before proceeding.
 
 ## Installation
 
