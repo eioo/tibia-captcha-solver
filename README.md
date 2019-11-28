@@ -2,9 +2,9 @@
 
 ## Requirements
 
-* **Python 3.6:** [32bit](https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe) or [64bit](https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe)
+* **Python 3.6:** [32bit](https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe) / [64bit](https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe)
 
-* **Tesseract OCR:** [32bit](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v5.0.0-alpha.20191030.exe) or [64bit](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.0-alpha.20191030.exe) 
+* **Tesseract OCR:** [32bit](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v5.0.0-alpha.20191030.exe) / [64bit](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.0-alpha.20191030.exe) 
 
 ❗️ Install both before proceeding.
 
@@ -23,7 +23,7 @@
 
     [Guide](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) on how to add environment variables.
 
-    You can confirm that they work by going to command prompt and typing `tesseract -v` and `python --version`
+    You can confirm that they work by opening a new command prompt and typing `tesseract -v` and `python --version`
 
 3. Run `setup.bat` (only run once)
 
